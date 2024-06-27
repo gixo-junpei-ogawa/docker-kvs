@@ -357,11 +357,11 @@ def test_delete_fail_keynotexist():
 
 
 def get_driver_elements():
-    options = Options()
+    options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     driver = webdriver.Remote(
         command_executor=HUBURL,
-        desired_capabilities=DesiredCapabilities.CHROME,
+        desired_capabilities=options.to_capabilities(),
     )
     driver.get(WEBURL)
     elements = {}
