@@ -24,6 +24,7 @@ APIURL = WEBURL + "api/v1"
 
 
 def test_get_success_nokey():
+    print("test_get_success_nokey started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -43,6 +44,7 @@ def test_get_success_nokey():
 
 
 def test_get_success_keyexist():
+    print("test_get_success_keyexist started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -62,6 +64,7 @@ def test_get_success_keyexist():
 
 
 def test_get_fail_keynotexist():
+    print("test_get_fail_keynotexist started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -86,6 +89,7 @@ def test_get_fail_keynotexist():
 
 
 def test_post_success():
+    print("test_post_success started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -106,6 +110,7 @@ def test_post_success():
 
 
 def test_post_fail_nokey():
+    print("test_post_fail_nokey started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -125,6 +130,7 @@ def test_post_fail_nokey():
 
 
 def test_post_fail_novalue():
+    print("test_post_fail_novalue started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -144,6 +150,7 @@ def test_post_fail_novalue():
 
 
 def test_post_fail_keyexist():
+    print("test_post_fail_keyexist started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -169,6 +176,7 @@ def test_post_fail_keyexist():
 
 
 def test_put_success_create():
+    print("test_put_success_create started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -189,6 +197,7 @@ def test_put_success_create():
 
 
 def test_put_success_update():
+    print("test_put_success_update started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -209,6 +218,7 @@ def test_put_success_update():
 
 
 def test_put_fail_nokey():
+    print("test_put_fail_nokey started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -228,6 +238,7 @@ def test_put_fail_nokey():
 
 
 def test_put_fail_novalue():
+    print("test_put_fail_novalue started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -252,6 +263,7 @@ def test_put_fail_novalue():
 
 
 def test_delete_success():
+    print("test_delete_success started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -271,6 +283,7 @@ def test_delete_success():
 
 
 def test_delete_fail_nokey():
+    print("test_delete_fail_nokey started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -289,6 +302,7 @@ def test_delete_fail_nokey():
 
 
 def test_delete_fail_keynotexist():
+    print("test_delete_fail_keynotexist started")
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
@@ -315,6 +329,7 @@ def test_delete_fail_keynotexist():
 
 
 def get_driver_elements():
+    print("get_driver_elements started")
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     driver = webdriver.Remote(
@@ -341,12 +356,14 @@ def get_driver_elements():
 
 
 def take_screenshot(driver, title):
+    print("take_screenshot started")
     today = datetime.datetime.today()
     timestamp = today.strftime("%Y%m%d%H%M%S")
     driver.save_screenshot(f"/images/{timestamp}-{title}.png")
 
 
 def clean():
+    print("clean started")
     r = requests.get(f"{APIURL}/keys/")
     for key in r.json():
         requests.delete(f"{APIURL}/keys/{key}")
@@ -355,6 +372,7 @@ def clean():
 
 
 def clean_and_add_keys():
+    print("clean_and_add_keys started")
     clean()
     r = requests.put(f"{APIURL}/keys/apple", data="red")
     assert r.status_code == 200
