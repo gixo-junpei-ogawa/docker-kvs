@@ -38,7 +38,7 @@ def test_get_success_nokey():
         assert rbody == {"apple": "red", "banana": "yellow"}
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -57,7 +57,7 @@ def test_get_success_keyexist():
         assert rbody == {"apple": "red"}
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -76,7 +76,7 @@ def test_get_fail_keynotexist():
         assert rbody["code"] == 404
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -101,7 +101,7 @@ def test_post_success():
         assert rbody == {"grape": "purple"}
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -120,7 +120,7 @@ def test_post_fail_nokey():
         assert rbody["code"] == 405
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -139,7 +139,7 @@ def test_post_fail_novalue():
         assert rbody["code"] == 400
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -159,7 +159,7 @@ def test_post_fail_keyexist():
         assert rbody["code"] == 409
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -184,7 +184,7 @@ def test_put_success_create():
         assert rbody == {"grape": "purple"}
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -204,7 +204,7 @@ def test_put_success_update():
         assert rbody == {"apple": "green"}
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -223,7 +223,7 @@ def test_put_fail_nokey():
         assert rbody["code"] == 405
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -242,7 +242,7 @@ def test_put_fail_novalue():
         assert rbody["code"] == 400
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -266,7 +266,7 @@ def test_delete_success():
         assert rbody == {}
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -284,7 +284,7 @@ def test_delete_fail_nokey():
         assert rbody["code"] == 405
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
@@ -303,7 +303,7 @@ def test_delete_fail_keynotexist():
         assert rbody["code"] == 404
         driver.quit()
     except:
-        # driver.quit()
+        driver.quit()
         raise
 
 
