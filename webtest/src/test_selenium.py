@@ -27,6 +27,9 @@ def test_get_success_nokey():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["get-button"].click()
         time.sleep(1)
         test_name = sys._getframe().f_code.co_name
@@ -46,6 +49,9 @@ def test_get_success_keyexist():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("apple")
         elems["get-button"].click()
         time.sleep(1)
@@ -65,6 +71,9 @@ def test_get_fail_keynotexist():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("grape")
         elems["get-button"].click()
         time.sleep(1)
@@ -89,6 +98,9 @@ def test_post_success():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("grape")
         elems["value"].send_keys("purple")
         elems["post-button"].click()
@@ -109,6 +121,9 @@ def test_post_fail_nokey():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["value"].send_keys("purple")
         elems["post-button"].click()
         time.sleep(1)
@@ -128,6 +143,9 @@ def test_post_fail_novalue():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("grape")
         elems["post-button"].click()
         time.sleep(1)
@@ -147,6 +165,9 @@ def test_post_fail_keyexist():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("apple")
         elems["value"].send_keys("green")
         elems["post-button"].click()
@@ -172,6 +193,9 @@ def test_put_success_create():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("grape")
         elems["value"].send_keys("purple")
         elems["put-button"].click()
@@ -192,6 +216,9 @@ def test_put_success_update():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("apple")
         elems["value"].send_keys("green")
         elems["put-button"].click()
@@ -212,6 +239,9 @@ def test_put_fail_nokey():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["value"].send_keys("purple")
         elems["put-button"].click()
         time.sleep(1)
@@ -231,6 +261,9 @@ def test_put_fail_novalue():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("grape")
         elems["put-button"].click()
         time.sleep(1)
@@ -255,6 +288,9 @@ def test_delete_success():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("apple")
         elems["delete-button"].click()
         time.sleep(1)
@@ -274,6 +310,9 @@ def test_delete_fail_nokey():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["delete-button"].click()
         time.sleep(1)
         take_screenshot(driver, sys._getframe().f_code.co_name)
@@ -292,6 +331,9 @@ def test_delete_fail_keynotexist():
     clean_and_add_keys()
     try:
         (driver, elems) = get_driver_elements()
+    except:
+        raise
+    try:
         elems["key"].send_keys("purple")
         elems["delete-button"].click()
         time.sleep(1)
