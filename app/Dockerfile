@@ -1,5 +1,5 @@
-From python:3.7.5-slim
-RUN pip install flask==1.1.1 redis==3.3.8
+FROM python:3.9.19-slim
+RUN pip install flask redis
 WORKDIR /src
 COPY ./src/server.py /src/
 ENV PORT 80

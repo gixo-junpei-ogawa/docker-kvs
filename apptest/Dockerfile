@@ -1,5 +1,5 @@
-From python:3.7.5-slim
-RUN pip install pytest==5.2.0 requests==2.22.0
+FROM python:3.9.19-slim
+RUN pip install pytest requests
 WORKDIR /src
 COPY ./src/test_app.py /src/test_app.py
 ENV APP_HOST 127.0.0.1
