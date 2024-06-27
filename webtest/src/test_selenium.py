@@ -35,7 +35,8 @@ def test_get_success_nokey():
         rbody = json.loads(elems["response-body"].text)
         assert rbody == {"apple": "red", "banana": "yellow"}
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -54,7 +55,8 @@ def test_get_success_keyexist():
         rbody = json.loads(elems["response-body"].text)
         assert rbody == {"apple": "red"}
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -73,7 +75,8 @@ def test_get_fail_keynotexist():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 404
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -98,7 +101,8 @@ def test_post_success():
         rbody = json.loads(elems["response-body"].text)
         assert rbody == {"grape": "purple"}
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -117,7 +121,8 @@ def test_post_fail_nokey():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 405
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -136,7 +141,8 @@ def test_post_fail_novalue():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 400
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -156,7 +162,8 @@ def test_post_fail_keyexist():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 409
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -181,7 +188,8 @@ def test_put_success_create():
         rbody = json.loads(elems["response-body"].text)
         assert rbody == {"grape": "purple"}
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -201,7 +209,8 @@ def test_put_success_update():
         rbody = json.loads(elems["response-body"].text)
         assert rbody == {"apple": "green"}
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -220,7 +229,8 @@ def test_put_fail_nokey():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 405
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -239,7 +249,8 @@ def test_put_fail_novalue():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 400
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -263,7 +274,8 @@ def test_delete_success():
         rbody = json.loads(elems["response-body"].text)
         assert rbody == {}
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -281,7 +293,8 @@ def test_delete_fail_nokey():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 405
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
@@ -300,7 +313,8 @@ def test_delete_fail_keynotexist():
         rbody = json.loads(elems["response-body"].text)
         assert rbody["code"] == 404
         driver.quit()
-    except:
+    except Exception as e:
+        print(e)
         driver.quit()
         raise
 
