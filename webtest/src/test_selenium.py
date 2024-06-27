@@ -361,7 +361,7 @@ def get_driver_elements():
     options.add_argument("--headless")
     driver = webdriver.Remote(
         command_executor=HUBURL,
-        desired_capabilities=options.to_capabilities(),
+        options=options,
     )
     driver.get(WEBURL)
     elements = {}
