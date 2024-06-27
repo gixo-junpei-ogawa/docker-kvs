@@ -8,6 +8,7 @@ import requests
 from selenium import webdriver
 from selenium.common.exceptions import UnexpectedAlertPresentException
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 SELENIUM_HUB_HOST = os.environ["SELENIUM_HUB_HOST"]
@@ -354,7 +355,7 @@ def get_driver_elements():
         "response-body",
     ]:
         print("start driver.find_element_by_id(html_id)")
-        elements[html_id] = driver.find_element_by_id(html_id)
+        elements[html_id] = driver.find_element(By.ID, html_id)
     print(f"elements: {elements}")
     return (driver, elements)
 
