@@ -331,11 +331,14 @@ def test_delete_fail_keynotexist():
 def get_driver_elements():
     print("get_driver_elements started")
     options = webdriver.ChromeOptions()
+    print("start options.add_argument('--headless')")
     options.add_argument("--headless")
+    print("start driver = webdriver.Remote(")
     driver = webdriver.Remote(
         command_executor=HUBURL,
         options=options,
     )
+    print("start driver.get(WEBURL)")
     driver.get(WEBURL)
     elements = {}
     for html_id in [
@@ -350,6 +353,7 @@ def get_driver_elements():
         "response-code",
         "response-body",
     ]:
+        print("start driver.find_element_by_id(html_id)")
         elements[html_id] = driver.find_element_by_id(html_id)
     print(f"elements: {elements}")
     return (driver, elements)
